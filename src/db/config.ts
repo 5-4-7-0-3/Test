@@ -9,4 +9,5 @@ export const {
 export const options = {
     useNewUrlParser: true,
     connectTimeoutMS: 10000,
+    useUnifiedTopology: true
 };
