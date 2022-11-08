@@ -7,7 +7,8 @@
       "allowSyntheticDefaultImports":true
     },
     "include": [
-        "src/"
+        "src/**/*",
+        "start"
       ],
       "exclude": [
         "node_modules"
