@@ -2,15 +2,16 @@ import express from "express";
 import dotenv from "dotenv";
 
 import { setupDb } from "./db/setup-db";
+import userRout from "./routs/user"
 
+setupDb();
 dotenv.config();
 
-const app = express();
-const port = process.env.PORT;
-setupDb();
+const PORT = process.env.PORT || 8000;
+const app = require("express")();
+const server = require("http").createServer(app);
 
-app.get('/', (req, res) => {
-    res.send('Hello world!');
-});
+app.use(express.json());
+app.use("/", userRout);
 
-app.listen(port, () => console.log(`Running on port ${port}`));
+server.listen(PORT, () => console.log(`server is running on port ${PORT}`));
