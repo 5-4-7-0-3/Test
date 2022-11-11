@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start:ts": "tsc -w",
-    "start": "nodemon ./dist/src"
+    "start": "nodemon ./dist"
   },
   "author": "Vlad Kovalov",
   "license": "ISC",

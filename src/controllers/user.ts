@@ -109,6 +109,32 @@ class UserController {
             res.json({ message: "The user has this rank." });
         }
     }
+
+    async seedTableUser(req: express.Request, res: express.Response) {    //test method
+        let arrUserName = [
+            "Jena",
+            "Kye",
+            "Callie",
+            "Leigha",
+            "Darnell",
+            "Simrah",
+            "Yara",
+            "Joseff",
+            "Emer",
+            "Kristi"
+        ];
+        for (let i = 0; i < arrUserName.length; i++) {
+            let userName = arrUserName[i];
+            let userRank = i + 1;
+            await this.userService.createUser(
+                userName,
+                userRank
+            );
+            console.log(userName);
+
+        }
+        res.json(await this.userService.findUsers());
+    }
 }
 export { UserController };
 

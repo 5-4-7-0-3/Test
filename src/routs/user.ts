@@ -18,17 +18,22 @@ router.get(
 );
 
 router.put(
-    "/updateUser/:id", controllers.userController.updateUser.bind(controllers.userController)
-
+    "/updateUser/:id",
+    controllers.userController.updateUser.bind(controllers.userController)
 );
 
 router.delete(
-    "/deleteUser/:id", controllers.userController.deleteUser.bind(controllers.userController)
-
+    "/deleteUser/:id",
+    controllers.userController.deleteUser.bind(controllers.userController)
 );
 
 router.put(
-    "/updateRank/:id", controllers.userController.updateRank.bind(controllers.userController)
+    "/updateRank/:id",
+    controllers.userController.updateRank.bind(controllers.userController)
+);
 
+router.get(
+    "/seedUser",
+    controllers.userController.seedTableUser.bind(controllers.userController)
 );
 export default router;
