@@ -27,4 +27,8 @@ router.delete(
 
 );
 
+router.put(
+    "/updateRank/:id", controllers.userController.updateRank.bind(controllers.userController)
+
+);
 export default router;

@@ -23,6 +23,10 @@ class UserService {
     async deleteUser(id) {
         return this.userDto.deleteUser(id);
     };
+
+    async findSortUser(option) {
+        return this.userDto.findSortUser(option)
+    }
 }
 
 export { UserService };

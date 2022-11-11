@@ -30,6 +30,10 @@ class UserDto {
     async deleteUser(id) {
         return User.deleteOne({ id })
     };
+
+    async findSortUser(option) {
+        return User.find({ userRank: option })
+    }
 }
 
 export { UserDto };

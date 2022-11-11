@@ -26,14 +26,11 @@ class UserController {
     };
 
     async updateUser(req: express.Request, res: express.Response) {
-        const { newUserRank } = req.body;
-
-        const oldUser = await this.userService.findOneUser(newUserRank);
-
+        const { userName, userRank } = req.body;
         const user = await this.userService.updateUser(
             req.params.id, {
-
-            newUserRank
+            userName,
+            userRank
         });
         res.json(user);
     };
@@ -43,6 +40,75 @@ class UserController {
         res.json(user);
     };
 
+    async updateRank(req: express.Request, res: express.Response) {
+        const { newUserRank } = req.body; //3
+        const user = await this.userService.findOneUser(req.params.id);
+        const oldUserRank = user.userRank;
+
+        if (newUserRank < oldUserRank) {
+            let filterRank = newUserRank;
+            const arrRankUser = [];
+
+            for (let i = filterRank; i <= oldUserRank; i++) {
+                arrRankUser.push(filterRank);
+                filterRank++;
+            }
+
+            let arrSortUsers = await this.userService.findSortUser(arrRankUser);
+            const idOldUserRank = arrSortUsers.find(user => user.userRank === oldUserRank)._id;
+
+            await this.userService.updateUser(
+                idOldUserRank, {
+                userRank: newUserRank
+            });
+
+            const deleteUser = arrSortUsers.indexOf(arrSortUsers.find(user => user.userRank === oldUserRank));
+
+            if (deleteUser !== -1) {
+                arrSortUsers.splice(deleteUser, 1);
+            }
+
+            for (let i = 0; i < arrSortUsers.length; i++) {
+                await this.userService.updateUser(
+                    arrSortUsers[i]._id, {
+                    userRank: arrSortUsers[i].userRank + 1
+                });
+            }
+            res.json({ message: "The rank has been changed." });
+        } else if (newUserRank > oldUserRank) {
+            let filterRank = oldUserRank;
+            const arrRankUser = [];
+
+            for (let i = filterRank; i <= newUserRank; i++) {
+                arrRankUser.push(filterRank);
+                filterRank++;
+            }
+
+            let arrSortUsers = await this.userService.findSortUser(arrRankUser);
+            const idOldUserRank = arrSortUsers.find(user => user.userRank === oldUserRank)._id;
+
+            await this.userService.updateUser(
+                idOldUserRank, {
+                userRank: newUserRank
+            });
+
+            const deleteUser = arrSortUsers.indexOf(arrSortUsers.find(user => user.userRank === oldUserRank));
+
+            if (deleteUser !== -1) {
+                arrSortUsers.splice(deleteUser, 1);
+            }
+
+            for (let i = 0; i < arrSortUsers.length; i++) {
+                await this.userService.updateUser(
+                    arrSortUsers[i]._id, {
+                    userRank: arrSortUsers[i].userRank - 1
+                });
+            }
+            res.json({ message: "The rank has been changed." });
+        } else {
+            res.json({ message: "The user has this rank." });
+        }
+    }
 }
 export { UserController };
 
