@@ -12,7 +12,7 @@ let url: string;
 if (MONGO_DB != undefined) {
     url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 } else {
-    url = `mongodb://localhost:27017/test`;
+    url = `mongodb://localhost:27017/test?authSource=admin`;
 }
 function setupDb() {
     main().catch((err) => console.log(err));
