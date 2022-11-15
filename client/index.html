@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Test</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- Dark MDB theme -->
+    <link rel="stylesheet" href="css/mdb.dark.min.css" />
+    <!-- Regular MDB theme -->
+    <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
+  </head>
+  <body>
+    <!-- Start your project here-->
+    <script src="./components/deleteUser.js"></script>
+    <script src="./components/createUser.js"></script>
+    <script src="./components/updateUser.js"></script>
+    <script src="./components/updateRank.js"></script>
+    <script src="./components/seedUser.js"></script>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <!-- form create user -->
+            <h1>Create user</h1>
+            <form>
+                <!-- userName input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="createUserName" class="form-control" />
+                  <label class="form-label" for="createUserName">userName</label>
+                </div>
+
+                <!-- userRank input -->
+                <div class="form-outline mb-4">
+                  <input type="number" id="createUserRank" class="form-control" />
+                  <label class="form-label" for="createUserRank">userRank</label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block" onclick="createUser()">Create user</button>
+              </form>
+              <div class=".col-md-6">--------------------------------------------------------------------------------</div>
+              <div class=".col-md-6"></div><button type="button" class="btn btn-success btn-block" onclick="seedUser()">Seed Table</button>
+            </div>
+
+          <div class="col-md-8">
+          <div class=".col-md-6">
+            <h1>Table users</h1>
+            <script src="./components/tableUser.js"></script>
+            <div class="tableUser"></div>
+
+            <!-- modal update user -->
+            <div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update user</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+            <!-- form update user -->
+                        <form>
+                            <!-- userName input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="updateUserName" class="form-control" />
+                                <label class="form-label" for="updateUserName">userName</label>
+                            </div>
+
+                            <!-- userRank input -->
+                            <div class="form-outline mb-4">
+                                <input type="number" id="updateUserRank" class="form-control" />
+                                <label class="form-label" for="updateUserRank">userRank</label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="button" class="btn btn-primary btn-block" onclick="updateUser()">Update user</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- modal update rank -->
+            <div class="modal fade" id="updateRank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update rank</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+             <!-- form update rank -->
+                        <form>
+                            <!-- userRank input -->
+                            <div class="form-outline mb-4">
+                                <input type="number" id="userRunkUpdate" class="form-control" />
+                                <label class="form-label" for="userRunkUpdate">userRank</label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="button" class="btn btn-primary btn-block" onclick="updateRank()">Update user</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

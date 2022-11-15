@@ -14,7 +14,7 @@ class UserDto {
     };
 
     async findUsers() {
-        return await User.find();
+        return await User.find().sort({ "userRank": 1 });
     };
 
     async updateUser(id, { userName, userRank }) {
@@ -28,7 +28,7 @@ class UserDto {
     };
 
     async deleteUser(id) {
-        return User.deleteOne({ id })
+        return User.findByIdAndDelete(id)
     };
 
     async findSortUser(option) {

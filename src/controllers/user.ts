@@ -41,7 +41,7 @@ class UserController {
     };
 
     async updateRank(req: express.Request, res: express.Response) {
-        const { newUserRank } = req.body; //3
+        const { newUserRank } = req.body;
         const user = await this.userService.findOneUser(req.params.id);
         const oldUserRank = user.userRank;
 
