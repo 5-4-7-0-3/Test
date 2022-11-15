@@ -14,8 +14,10 @@ const server = require("http").createServer(app);
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
     res.set({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'Version, Authorization, Content-Type',
+        "Content-Type": 'application/json; charset=UTF-8'
     });
     next();
 });
