@@ -3,7 +3,7 @@ Project launch
 
 run the script in the terminal
 
-npm init
+npm install
 
 ...
 
