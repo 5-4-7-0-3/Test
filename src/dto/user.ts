@@ -28,7 +28,7 @@ class UserDto {
     };
 
     async deleteUser(id) {
-        return User.deleteOne({ id })
+        return User.findByIdAndDelete(id)
     };
 
     async findSortUser(option) {
