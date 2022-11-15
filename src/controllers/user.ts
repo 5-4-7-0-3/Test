@@ -130,8 +130,6 @@ class UserController {
                 userName,
                 userRank
             );
-            console.log(userName);
-
         }
         res.json(await this.userService.findUsers());
     }
