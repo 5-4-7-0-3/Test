@@ -1,13 +1,22 @@
 # Test
 Project launch
+
 run the script in the terminal
+
 npm init
+
 ...
+
 npm run start:ts
+
 ...
+
 npm run start
+
 ...
+
 open the index.html file in the browser
+
 index.html is in the client folder
 
 
