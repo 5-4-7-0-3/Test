@@ -29,4 +29,5 @@ function updateUser(){
         });
     }
     update();
+    location.reload()
 }
