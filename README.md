@@ -3,6 +3,8 @@ Project launch
 
 run the script in the terminal
 
+For the api to work, you need to install mongo locally
+
 npm install
 
 ...
