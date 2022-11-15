@@ -1,9 +1,9 @@
 # Test
 Project launch
 
-run the script in the terminal
-
 For the api to work, you need to install mongo locally
+
+run the script in the terminal
 
 npm install
 
