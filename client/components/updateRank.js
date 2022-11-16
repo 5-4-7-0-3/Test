@@ -27,7 +27,7 @@ function updateRank(){
             });
         }
         update();
-        location.reload()
+        location.reload();
 
     } else alert('Enter rank')
 }

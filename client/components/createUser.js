@@ -17,6 +17,7 @@ function createUser(){
             body: JSON.stringify({userName: userName, userRank: userRank})
             });
         }
-    }
     create();
+    location.reload()
+    }
 }
