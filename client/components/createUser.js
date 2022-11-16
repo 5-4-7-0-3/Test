@@ -16,8 +16,8 @@ function createUser(){
             referrerPolicy: 'no-referrer',
             body: JSON.stringify({userName: userName, userRank: userRank})
             });
+            location.reload()
         }
     create();
-    location.reload()
     }
 }

@@ -41,10 +41,10 @@ class UserController {
     };
 
     async updateRank(req: express.Request, res: express.Response) {
-        const { newUserRank } = req.body;
+        const { userRank } = req.body;
         const user = await this.userService.findOneUser(req.params.id);
         const oldUserRank = user.userRank;
-
+        const newUserRank = userRank;
         if (newUserRank < oldUserRank) {
             let filterRank = newUserRank;
             const arrRankUser = [];

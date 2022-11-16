@@ -27,7 +27,7 @@ function updateUser(){
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
         });
+        location.reload()
     }
     update();
-    location.reload()
 }

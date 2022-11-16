@@ -12,7 +12,7 @@ function updateRank(){
         console.log(ID);
         console.log(data);
         async function update() {
-            const response = await fetch(`http://127.0.0.1:8000/updateUser/${ID}`, {
+            const response = await fetch(`http://127.0.0.1:8000/updateRank/${ID}`, {
             method: 'PUT',
             mode: 'cors',
             cache: 'no-cache',
@@ -25,9 +25,8 @@ function updateRank(){
             referrerPolicy: 'no-referrer',
             body: JSON.stringify(data)
             });
+            location.reload();
         }
         update();
-        location.reload();
-
     } else alert('Enter rank')
 }
